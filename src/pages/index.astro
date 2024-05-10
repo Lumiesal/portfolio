@@ -1,30 +1,94 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-
+import CardProjects from '../components/CardProjets.astro';
+import CardAbout from '../components/CardAbout.astro';
+import TitleSection from '../components/TitleSection.astro';
+import Form from '../components/Form.astro';
 ---
 
 <Layout title="Portfolio">
-	<main>
-		<section id="home">
-			<div><span>Hola</span></div>
-			<div>
-				<div></div>
-				<div><h1 class="text-8xl text-center font-semibold w-full mx-">Soy <span class="text-custom-green">Luis</span>, Desarollador Web</h1></div>
+		<section id="home" class="home">
+			<div class="content max-w-9xl m-auto pt-36 px-5">
+				<div class="title-section mb-16">
+					<span class="block max-w-max mx-auto mb-3 py-2 px-5 border-solid border-2 rounded-full">Hola</span>
+					<h1 class="text-8xl text-center font-semibold w-full max-w-4xl m-auto">Soy <span class="text-custom-green">Luis</span>, Desarollador Web</h1>
+				</div>
+				<div class="w-full flex justify-between align-middle ">
+					<div>
+						<i class="fas fa-quote-left text-custom-gray text-3xl"></i>
+						<p class="max-w-80">
+						Transformo ideas en experiencias 
+						web emocionantes que destacan 
+						tu presencia digital.
+						</p>
+					</div>
+					<div>
+						<div class="mb-5">
+							<i class="fas fa-star text-custom-green text-3xl"></i>
+							<i class="fas fa-star text-custom-green text-3xl"></i>
+							<i class="fas fa-star text-custom-green text-3xl"></i>
+							<i class="fas fa-star text-custom-green text-3xl"></i>
+							<i class="fas fa-star text-custom-green text-3xl"></i>							
+						</div>						
+						<div class="flex flex-col items-end"><span class="block text-custom-gray text-5xl font-bold mb-2">+4 Años</span> De Experincia</div>
+					</div>
+				</div>
+				<div class="flex justify-center">
+					<figure class="-mt-60"><img src="dasarrollador-luis.png" alt=""></figure>
+				</div>
 			</div>
 		</section>
-	</main>
+		<section id="projects" class="projects">
+			<div class="content max-w-9xl m-auto py-14 px-5">
+				<div class="content-title"><TitleSection classAdd="max-w-[426px]">Échale un vistazo a mi <span class="text-custom-green ">portafolio</span>.</TitleSection></div>
+				<div class="py-12"><CardProjects /></div>
+				<div><p class="text-center text-custom-gray mx-auto max-w-lg">"Con tu apoyo, esta colección de proyectos puede seguir creciendo y expandiéndose. Estoy entusiasmado por las oportunidades futuras de desarrollar más experiencias impactantes juntos."</p>
+				</div>
+			</div>
+		</section>
+		<section id="about" class="about bg-custom-green-50">
+			<div class="content max-w-9xl m-auto py-20 px-5 flex flex-row ">
+				<div class="w-6/12">
+					<div class="content-title"><TitleSection classAdd="bg-clip-text">Mi experiencia.</TitleSection></div>
+					<CardAbout />
+					<CardAbout />
+				</div>
+				<div class="w-6/12">
+					<div class="content-title"><TitleSection classAdd="bg-clip-text">Mi educación</TitleSection></div>
+					<CardAbout />
+					<CardAbout />					
+				</div>
+			</div>
+		</section>
+		<section id="skill" class="skill">
+			<div class="content max-w-9xl m-auto py-20 px-5 flex flex-col ">
+				<TitleSection classAdd="text-center text-custom-green">Mis habilidades</TitleSection>					
+				<div class="w-full flex flex-row flex-wrap gap-3 justify-between pt-16">
+					<div class="w-2/12 p-10 bg-custom-gray rounded-md text-white text-5xl text-center">1</div>					
+					<div class="w-2/12 p-10 bg-custom-gray rounded-md text-white text-5xl text-center">2</div>					
+					<div class="w-2/12 p-10 bg-custom-gray rounded-md text-white text-5xl text-center">3</div>					
+					<div class="w-2/12 p-10 bg-custom-gray rounded-md text-white text-5xl text-center">4</div>					
+					<div class="w-2/12 p-10 bg-custom-gray rounded-md text-white text-5xl text-center">5</div>					
+					<div class="w-2/12 p-10 bg-custom-gray rounded-md text-white text-5xl text-center">6</div>					
+					<div class="w-2/12 p-10 bg-custom-gray rounded-md text-white text-5xl text-center">7</div>					
+					<div class="w-2/12 p-10 bg-custom-gray rounded-md text-white text-5xl text-center">8</div>					
+					<div class="w-2/12 p-10 bg-custom-gray rounded-md text-white text-5xl text-center">9</div>					
+					<div class="w-2/12 p-10 bg-custom-gray rounded-md text-white text-5xl text-center">10</div>															
+				</div>
+			</div>
+		</section>
+		<section id="about" class="about bg-custom-green-50">
+			<div class="content max-w-9xl m-auto py-20 px-5 flex flex-row ">
+				<div class="w-6/12">
+					<div class="cotent-form w-full mx-auto bg-white p-8 rounded-md shadow-md">
+						<div class="content-title"><TitleSection>¡Trabajemos <span class="text-custom-green">juntos</span>!</TitleSection></div>
+						<Form />
+					  </div>				  					
+				</div>
+				<div class="w-6/12">
+					<CardAbout />
+					<CardAbout />					
+				</div>
+			</div>
+		</section>
 </Layout>
-
-<style>
-	main {
-		margin: auto;
-		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
-		color: white;
-		font-size: 20px;
-		line-height: 1.6;
-	}
-
-</style>

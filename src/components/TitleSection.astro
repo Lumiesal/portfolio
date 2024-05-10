@@ -1,0 +1,18 @@
+---
+const { classAdd } = Astro.props;
+
+const classes = [
+  "text-custom-gray",
+  "text-5xl",
+  "leading-16",
+  "font-urbanist",
+  "font-semibold",
+];
+
+const sumclass = classAdd+" "+classes.join(" ");
+
+---
+
+<h2 class={sumclass}>
+ <slot /> 
+</h2>

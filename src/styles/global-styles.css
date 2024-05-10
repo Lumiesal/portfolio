@@ -1,5 +1,6 @@
 @font-face { font-family: 'Lufga'; src: url('/fonts/LufgaBold.woff') format('woff'); font-weight: 700; font-style: normal; font-display: swap;}
 @font-face { font-family: 'Lufga'; src: url('/fonts/LufgaSemiBold.woff') format('woff'); font-weight: 600; font-style: normal; font-display: swap;}
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&family=Open+Sans&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
 
@@ -31,4 +32,37 @@ body{
     font-weight:700;
     line-height:30px;
     font-family: 'Lufga';
+    border-radius:500px;
+}
+
+
+/*-------- */
+ 
+#main #home figure{
+    position:relative;
+}
+#main #home figure::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: block;
+    width: 80%;
+    height: auto;
+    aspect-ratio: 15 / 8;
+    background: #B1E8D0;
+    border-radius: 550px 550px 0px 0px;
+    -webkit-border-radius: 550px 550px 0px 0px;
+    -moz-border-radius: 550px 550px 0px 0px;
+    z-index: -1;}
+
+#main .bg-clip-text {
+    background-image: linear-gradient(to right, #00C593, #171717);
+    background-size:60%;
+    background-position:0%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color:transparent;
 }
