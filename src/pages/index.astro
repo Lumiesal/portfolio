@@ -41,7 +41,18 @@ import Form from '../components/Form.astro';
 		<section id="projects" class="projects">
 			<div class="content max-w-9xl m-auto py-14 px-5">
 				<div class="content-title"><TitleSection classAdd="max-w-[426px]">Échale un vistazo a mi <span class="text-custom-green ">portafolio</span>.</TitleSection></div>
-				<div class="py-12"><CardProjects /></div>
+				<div class="py-12 flex gap-5">
+					<CardProjects 
+						title="JMteam"
+						body="Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, voluptatem explicabo. Fugit maxime iusto, modi facilis voluptates reiciendis rem laboriosam deleniti iste autem ut consequatur unde quasi. Quisquam pariatur sit architecto eos deleniti?"
+						urlImage="jmteam.webp"
+						/>						
+					<CardProjects 
+						title="servicentroautomotriz.com.co"
+						body="Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, voluptatem explicabo. Fugit maxime iusto, modi facilis voluptates reiciendis rem laboriosam deleniti iste autem ut consequatur unde quasi. Quisquam pariatur sit architecto eos deleniti?"
+						urlImage="servicentro.webp"
+						/>					
+				</div>
 				<div><p class="text-center text-custom-gray mx-auto max-w-lg">"Con tu apoyo, esta colección de proyectos puede seguir creciendo y expandiéndose. Estoy entusiasmado por las oportunidades futuras de desarrollar más experiencias impactantes juntos."</p>
 				</div>
 			</div>
@@ -52,6 +63,7 @@ import Form from '../components/Form.astro';
 					<div class="content-title"><TitleSection classAdd="bg-clip-text">Mi experiencia.</TitleSection></div>
 					<CardAbout />
 					<CardAbout />
+					<img src="" alt="">
 				</div>
 				<div class="w-6/12">
 					<div class="content-title"><TitleSection classAdd="bg-clip-text">Mi educación</TitleSection></div>

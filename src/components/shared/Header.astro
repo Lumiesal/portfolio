@@ -1,8 +1,24 @@
 ---
 
 ---
+<script>
+    // Seleccionar el header
+    const theHeader = document.getElementById('header');
 
-<header id="header" class="fixed top-5 left-0 right-0 flex w-full max-w-8xl m-auto p-3 bg-custom-gray rounded-full">
+    // Manejar el evento de scroll
+    window.addEventListener('scroll', () => {
+      // Verificar la posición de scroll
+      if (window.scrollY > 50) {
+        // Agregar la clase 'fijado' al header cuando se hace scroll hacia abajo
+        theHeader.classList.add('fijado');
+      } else {
+        // Quitar la clase 'fijado' del header cuando se vuelve a la parte superior
+        theHeader.classList.remove('fijado');
+      }
+    });
+</script>
+
+<header id="header" class="fixed top-5 left-0 right-0 flex w-full max-w-8xl m-auto p-3 bg-custom-gray rounded-full z-[99]">
     <nav id="nav" class="relative flex justify-center w-full">
         <div class="logo absolute top-0 bottom-0 left-0 right-0 flex justify-center align-middle w-max m-auto">
             <img src="logo-lumiesal.png" alt="Icono" class="block m-auto">
