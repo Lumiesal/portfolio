@@ -4,8 +4,7 @@ export default {
 	theme: {				
 		extend: {
 			fontFamily: {
-				lufga: ['Lufga', 'sans-serif'], // Registrar la fuente personalizada 'Lufga'
-				urbanist: ['Urbanist', 'sans-serif'], // Registrar la fuente personalizada 'Lufga'
+				lufga: ['Lufga', 'sans-serif'], // Registrar la fuente personalizada 'Lufga'				
 			},
 			colors: {
 				'custom-gray': '#171717',

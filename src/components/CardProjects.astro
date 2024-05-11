@@ -1,0 +1,19 @@
+---
+interface Props {
+	title: string;
+	body: string;
+	urlImage: string;
+}
+
+const { title, body, urlImage } = Astro.props;
+---
+<div class="item-project relative flex rounded-lg overflow-hidden z-10 w-full min-h-[400px] h-max p-3">
+	<div class="next-icon  absolute right-3 top-3 flex justify-center items-center w-16 h-16 border-2 border-custom-green rounded-full text-custom-green hover:text-white hover:bg-custom-green">
+		<i class="fas fa-arrow-right "></i> <!-- Icono de flecha "next" -->
+	</div> 
+	<div class="next-content mt-auto">
+		<h3 class="text-white text-6xl font-urbanist">{title}</h3> <!-- Título h3 -->
+		<p class="paragraph text-white">{body}</p> <!-- Párrafo -->
+		<img class="hover-image " src=`${urlImage}` alt="Imagen" /> <!-- Imagen -->
+	</div>
+</div>

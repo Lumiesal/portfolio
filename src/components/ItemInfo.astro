@@ -1,0 +1,22 @@
+---
+interface Props {
+	title: string;
+	url: string;
+	info: string;
+	icon: string;
+}
+
+const { title, url, info, icon } = Astro.props;
+---
+
+<div class="item-info mb-11">	
+    <a href={url} target="_blank" class="flex flex-nowrap items-center">		
+        <div class="item-icon w-16 h-16 mr-5 bg-white rounded-full flex justify-center items-center">							
+            <i class=`${icon} text-3xl text-custom-green`></i>					
+        </div>
+        <div class="item-info">
+            <h3 class="text-xl font-medium mb-1">{title}</h3>
+            <p class="font-semibold text-3xl font-lufga">{info}</p>
+        </div>	
+    </a>															
+</div>

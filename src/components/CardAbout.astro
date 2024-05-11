@@ -1,21 +1,27 @@
 ---
 interface Props {
-	title: string;
-	body: string;
-	href: string;
+	time: string;
+	position: string;
+	company: string;
 }
 
-const { href, title, body } = Astro.props;
+const { time, position, company } = Astro.props;
 ---
 
-<div class="link-card">
-	<a href={href}>
-		<h2>
-			{title}
-			<span>&rarr;</span>
-		</h2>
-		<p>
-			{body}
+<div class="link-card lg:w-11/12 bg-white p-8 mt-7 rounded-[20px]">
+	<div>
+		<span class="text-xl ">
+			<strong class="text-custom-green">
+				{time}
+			</strong>
+		</span>
+		<h3 class="text-2xl">
+			<strong>
+				{position}
+			</strong>
+		</h3>
+		<p class="font-normal">
+			{company}
 		</p>
-	</a>
+	</div>
 </div>

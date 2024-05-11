@@ -1,19 +1,29 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import CardProjects from '../components/CardProjets.astro';
+import CardProjects from '../components/CardProjects.astro';
 import CardAbout from '../components/CardAbout.astro';
+import ItemInfo from '../components/ItemInfo.astro';
 import TitleSection from '../components/TitleSection.astro';
 import Form from '../components/Form.astro';
 ---
 
 <Layout title="Portfolio">
 		<section id="home" class="home">
-			<div class="content max-w-9xl m-auto pt-36 px-5">
-				<div class="title-section mb-16">
-					<span class="block max-w-max mx-auto mb-3 py-2 px-5 border-solid border-2 rounded-full">Hola</span>
-					<h1 class="text-8xl text-center font-semibold w-full max-w-4xl m-auto">Soy <span class="text-custom-green">Luis</span>, Desarollador Web</h1>
+			<div class="content max-w-9xl m-auto pt-40 px-5 flex flex-col">
+				<div class="content-title mb-16 w-full order-1">
+					<div class="max-w-max mx-auto relative">
+						<img class="absolute -right-6 -top-6" src="icon-green-subtitle.svg" alt="Logo SVG">
+						<span class="block max-w-max mx-auto mb-3 py-2 px-5 border-solid border-2 rounded-full">Hola</span>
+					</div>
+					<div class="max-w-max mx-auto relative">
+						<img class="absolute left-0 -bottom-12" src="icon-green-title.svg" alt="Logo SVG">
+						<h1 class="title text-6xl md:text-8xl text-center font-semibold w-full max-w-4xl mx-auto">Soy <span class="text-custom-green">Luis</span>, Desarollador Web</h1>
+					</div>
 				</div>
-				<div class="w-full flex justify-between align-middle ">
+				<div class="content-image flex justify-center w-full order-3">
+					<figure class="-mt-32 transition-all"><img src="dasarrollador-luis.png" alt=""></figure>
+				</div>
+				<div class="content-stars w-full flex justify-between align-middle order-2">
 					<div>
 						<i class="fas fa-quote-left text-custom-gray text-3xl"></i>
 						<p class="max-w-80">
@@ -33,9 +43,7 @@ import Form from '../components/Form.astro';
 						<div class="flex flex-col items-end"><span class="block text-custom-gray text-5xl font-bold mb-2">+4 Años</span> De Experincia</div>
 					</div>
 				</div>
-				<div class="flex justify-center">
-					<figure class="-mt-60"><img src="dasarrollador-luis.png" alt=""></figure>
-				</div>
+				
 			</div>
 		</section>
 		<section id="projects" class="projects">
@@ -48,7 +56,7 @@ import Form from '../components/Form.astro';
 						urlImage="jmteam.webp"
 						/>						
 					<CardProjects 
-						title="servicentroautomotriz.com.co"
+						title="Servicentro"
 						body="Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, voluptatem explicabo. Fugit maxime iusto, modi facilis voluptates reiciendis rem laboriosam deleniti iste autem ut consequatur unde quasi. Quisquam pariatur sit architecto eos deleniti?"
 						urlImage="servicentro.webp"
 						/>					
@@ -58,17 +66,33 @@ import Form from '../components/Form.astro';
 			</div>
 		</section>
 		<section id="about" class="about bg-custom-green-50">
-			<div class="content max-w-9xl m-auto py-20 px-5 flex flex-row ">
-				<div class="w-6/12">
+			<div class="content max-w-9xl m-auto py-20 px-5 flex flex-col md:flex-row">
+				<div class="md:w-6/12">
 					<div class="content-title"><TitleSection classAdd="bg-clip-text">Mi experiencia.</TitleSection></div>
-					<CardAbout />
-					<CardAbout />
+					<CardAbout 
+						time="2021 - Present"
+						position="Desarrollador Frontend"
+						company="West Cretivo"
+					/>
+					<CardAbout 
+						time="2022 - Present"
+						position="Desarrollador web"
+						company="JM-Team"
+					/>
 					<img src="" alt="">
 				</div>
-				<div class="w-6/12">
+				<div class="md:w-6/12">
 					<div class="content-title"><TitleSection classAdd="bg-clip-text">Mi educación</TitleSection></div>
-					<CardAbout />
-					<CardAbout />					
+					<CardAbout 
+						time="2024 - Present"
+						position="React y TypeScript"
+						company="udemy"
+					/>
+					<CardAbout 
+						time="2023 - Present"
+						position="Desarrollador web"
+						company="Universidad de antioquia"
+					/>					
 				</div>
 			</div>
 		</section>
@@ -90,16 +114,42 @@ import Form from '../components/Form.astro';
 			</div>
 		</section>
 		<section id="about" class="about bg-custom-green-50">
-			<div class="content max-w-9xl m-auto py-20 px-5 flex flex-row ">
-				<div class="w-6/12">
+			<div class="content max-w-9xl m-auto py-20 px-5 flex flex-col md:flex-row ">
+				<div class="md:w-6/12">
 					<div class="cotent-form w-full mx-auto bg-white p-8 rounded-md shadow-md">
 						<div class="content-title"><TitleSection>¡Trabajemos <span class="text-custom-green">juntos</span>!</TitleSection></div>
 						<Form />
 					  </div>				  					
 				</div>
-				<div class="w-6/12">
-					<CardAbout />
-					<CardAbout />					
+				<div class="md:w-6/12 flex flex-col justify-center px-10">
+					<ItemInfo 
+						icon='fa-solid fa-phone-volume'
+						title='Teléfono'
+						info='+57 323 808 8453'
+						url='https://wa.me/+573238088453'
+					/>										
+					<div class="item-info mb-11">	
+						<a href="" class="flex flex-nowrap items-center">		
+							<div class="item-icon w-16 h-16 mr-5 bg-white rounded-full flex justify-center items-center">							
+								<i class="fa-solid fa-envelope text-3xl text-custom-green"></i>					
+							</div>
+							<div class="item-info">
+								<h3 class="text-xl font-medium mb-1">Email</h3>
+								<p class="font-semibold text-3xl font-lufga">lumiesal@gmail.com</p>
+							</div>	
+						</a>															
+					</div>
+					<div class="item-info ">						
+						<a href="" class="flex flex-nowrap items-center">
+							<div class="item-icon w-16 h-16 mr-5 bg-white rounded-full flex justify-center items-center">							
+								<i class="fa-brands fa-linkedin text-3xl text-custom-green"></i>
+							</div>
+							<div class="item-info">
+								<h3 class="text-xl font-medium mb-1">Linkedin</h3>
+								<p class="font-semibold text-3xl font-lufga">in/lumiesal</p>
+							</div>						
+						</a>										
+					</div>
 				</div>
 			</div>
 		</section>

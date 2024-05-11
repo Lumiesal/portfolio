@@ -4,6 +4,7 @@
 <script>
     // Seleccionar el header
     const theHeader = document.getElementById('header');
+    const theHome = document.getElementById('home');
 
     // Manejar el evento de scroll
     window.addEventListener('scroll', () => {
@@ -11,9 +12,11 @@
       if (window.scrollY > 50) {
         // Agregar la clase 'fijado' al header cuando se hace scroll hacia abajo
         theHeader.classList.add('fijado');
+        theHome.classList.add('fijado');
       } else {
         // Quitar la clase 'fijado' del header cuando se vuelve a la parte superior
         theHeader.classList.remove('fijado');
+        theHome.classList.remove('fijado');
       }
     });
 </script>
