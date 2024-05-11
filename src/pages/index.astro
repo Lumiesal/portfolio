@@ -5,6 +5,8 @@ import CardAbout from '../components/CardAbout.astro';
 import ItemInfo from '../components/ItemInfo.astro';
 import TitleSection from '../components/TitleSection.astro';
 import Form from '../components/Form.astro';
+import { ViewTransitions } from 'astro:transitions';
+
 ---
 <Layout title="Portfolio">
 		<section id="home" class="home">
@@ -50,7 +52,7 @@ import Form from '../components/Form.astro';
 				<div class="content-title">					
 					<TitleSection classAdd="max-w-[426px]">Échale un vistazo a mi <span class="text-custom-green ">portafolio</span>.</TitleSection>
 				</div>
-				<div class="py-12 flex gap-5">
+				<div class="py-12 flex gap-5 slick-slider">
 					<CardProjects 
 						title="JMteam"
 						body="Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, voluptatem explicabo. Fugit maxime iusto, modi facilis voluptates reiciendis rem laboriosam deleniti iste autem ut consequatur unde quasi. Quisquam pariatur sit architecto eos deleniti?"
@@ -65,7 +67,7 @@ import Form from '../components/Form.astro';
 						title="LudoNex"
 						body="Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, voluptatem explicabo. Fugit maxime iusto, modi facilis voluptates reiciendis rem laboriosam deleniti iste autem ut consequatur unde quasi. Quisquam pariatur sit architecto eos deleniti?"
 						urlImage="ludonex.webp"
-						/>					
+						/>
 				</div>
 				<div><p class="text-center text-custom-gray mx-auto max-w-lg">"Con tu apoyo, esta colección de proyectos puede seguir creciendo y expandiéndose. Estoy entusiasmado por las oportunidades futuras de desarrollar más experiencias impactantes juntos."</p>
 				</div>
@@ -117,22 +119,20 @@ import Form from '../components/Form.astro';
 			<div class="content max-w-9xl m-auto py-20 px-5 flex flex-col ">
 				<TitleSection classAdd="text-center text-custom-green">Mis habilidades</TitleSection>					
 				<div class="w-full flex flex-row flex-wrap gap-3 justify-between pt-16">
-					<div class="w-[11%] p-6 rounded-md text-white text-5xl text-center"><img class="block w-full" src="/icons/icon-html.svg" alt=""></div>					
-					<div class="w-[11%] p-6 rounded-md text-white text-5xl text-center"><img class="block w-full" src="/icons/icon-css.svg" alt=""></div>					
-					<div class="w-[11%] p-6 rounded-md text-white text-5xl text-center"><img class="block w-full" src="/icons/icon-js.svg" alt=""></div>					
-					<div class="w-[11%] p-6 rounded-md text-white text-5xl text-center"><img class="block w-full" src="/icons/icon-tailwind.svg" alt=""></div>					
-					<div class="w-[11%] p-6 rounded-md text-white text-5xl text-center"><img class="block w-full" src="/icons/icon-boostra.svg" alt=""></div>					
-					<div class="w-[11%] p-6 rounded-md text-white text-5xl text-center"><img class="block w-full" src="/icons/icon-jquery.svg" alt=""></div>					
-					<div class="w-[11%] p-6 rounded-md text-white text-5xl text-center"><img class="block w-full" src="/icons/icon-react.svg" alt=""></div>					
-					<div class="w-[11%] p-6 rounded-md text-white text-5xl text-center"><img class="block w-full" src="/icons/icon-Astro_dark.svg" alt=""></div>					
-					<div class="w-[11%] p-6 rounded-md text-white text-5xl text-center"><img class="block w-full" src="/icons/icon-wordpress.svg" alt=""></div>					
-					<div class="w-[11%] p-6 rounded-md text-white text-5xl text-center"><img class="block w-full" src="/icons/icon-shopify.svg" alt=""></div>					
-					<div class="w-[11%] p-6 rounded-md text-white text-5xl text-center"><img class="block w-full" src="/icons/icon-git.svg" alt=""></div>					
-					<div class="w-[11%] p-6 rounded-md text-white text-5xl text-center"><img class="block w-full" src="/icons/icon-github.svg" alt=""></div>					
-					<div class="w-[11%] p-6 rounded-md text-white text-5xl text-center"><img class="block w-full" src="/icons/icon-figma.svg" alt=""></div>					
-					<div class="w-[11%] p-6 rounded-md text-white text-5xl text-center"><img class="block w-full" src="/icons/icon-photoshop.svg" alt=""></div>					
-					<div class="w-[11%] p-6 rounded-md text-white text-5xl text-center"><img class="block w-full" src="/icons/icon-vscode.svg" alt=""></div>					
-																				
+					<div class="w-[12%] p-6 rounded-md text-white text-5xl text-center"><img class="block w-full" src="/icons/icon-html.svg" alt=""></div>					
+					<div class="w-[12%] p-6 rounded-md text-white text-5xl text-center"><img class="block w-full" src="/icons/icon-css.svg" alt=""></div>					
+					<div class="w-[12%] p-6 rounded-md text-white text-5xl text-center"><img class="block w-full" src="/icons/icon-js.svg" alt=""></div>					
+					<div class="w-[12%] p-6 rounded-md text-white text-5xl text-center"><img class="block w-full" src="/icons/icon-tailwind.svg" alt=""></div>					
+					<div class="w-[12%] p-6 rounded-md text-white text-5xl text-center"><img class="block w-full" src="/icons/icon-boostra.svg" alt=""></div>					
+					<div class="w-[12%] p-6 rounded-md text-white text-5xl text-center"><img class="block w-full" src="/icons/icon-jquery.svg" alt=""></div>					
+					<div class="w-[12%] p-6 rounded-md text-white text-5xl text-center"><img class="block w-full" src="/icons/icon-react.svg" alt=""></div>					
+					<div class="w-[12%] p-6 rounded-md text-white text-5xl text-center"><img class="block w-full" src="/icons/icon-Astro_dark.svg" alt=""></div>					
+					<div class="w-[12%] p-6 rounded-md text-white text-5xl text-center"><img class="block w-full" src="/icons/icon-wordpress.svg" alt=""></div>					
+					<div class="w-[12%] p-6 rounded-md text-white text-5xl text-center"><img class="block w-full" src="/icons/icon-shopify.svg" alt=""></div>					
+					<div class="w-[12%] p-6 rounded-md text-white text-5xl text-center"><img class="block w-full" src="/icons/icon-git.svg" alt=""></div>					
+					<div class="w-[12%] p-6 rounded-md text-white text-5xl text-center"><img class="block w-full" src="/icons/icon-github.svg" alt=""></div>					
+					<div class="w-[12%] p-6 rounded-md text-white text-5xl text-center"><img class="block w-full" src="/icons/icon-figma.svg" alt=""></div>					
+					<div class="w-[12%] p-6 rounded-md text-white text-5xl text-center"><img class="block w-full" src="/icons/icon-photoshop.svg" alt=""></div>																			
 				</div>
 			</div>
 		</section>
@@ -177,3 +177,21 @@ import Form from '../components/Form.astro';
 			</div>
 		</section>
 </Layout>
+<script>
+import { onMount } from 'astro';
+
+export function mount() {
+  onMount(() => {
+    const slider = document.querySelector('.slick-slider');
+
+    if (slider) {
+      Slick(slider, {
+        autoplay: true,
+        arrows: true,
+        dots: true,
+        // Otras opciones de configuración de Slick Slider...
+      });
+    }
+  });
+}
+</script>
