@@ -3,140 +3,162 @@
 @tailwind utilities;
 
 /* Configuración de fuentes personalizadas en Tailwind CSS */
-@font-face { font-family: 'Lufga'; src: url('/fonts/LufgaBold.woff') format('woff'); font-weight: 700; font-style: normal; font-display: swap;}
-@font-face { font-family: 'Lufga'; src: url('/fonts/LufgaSemiBold.woff') format('woff'); font-weight: 600; font-style: normal; font-display: swap;}
-@font-face { font-family: 'Lufga'; src: url('/fonts/LufgaSemiBold.woff') format('woff'); font-weight: 400; font-style: normal; font-display: swap;}
-@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
-
-
-
-:root {
-    font-family:'Lufga', sans-serif;
+@font-face {
+  font-family: "Lufga";
+  src: url("/fonts/LufgaBold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
 }
-html {
-    margin:0;
-    padding:0;
+@font-face {
+  font-family: "Lufga";
+  src: url("/fonts/LufgaSemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
 }
+@font-face {
+  font-family: "Lufga";
+  src: url("/fonts/LufgaSemiBold.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
 
-html *{
-    box-sizing:border-box;
+@media screen and (min-width: 0px) {
+  :root {
+    font-family: "Lufga", sans-serif;
+  }
+  html {
+    margin: 0;
+    padding: 0;
+  }
+
+  html * {
+    box-sizing: border-box;
     color: #171717;
-}
-body{
-    display:flex;
-    justify-content:center;
-    flex-direction:column;
+  }
+  body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     color: #171717;
-}
+  }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family:'Urbanist', sans-serif;
-} 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Urbanist", sans-serif;
+  }
 
-
-#header{
-    transition: backdrop-filter .5s, background-color .5s;
-}
-#header.fijado{
-    background-color:rgba(23, 23, 23, 0.506); 
+  #header {
+    transition: backdrop-filter 0.5s, background-color 0.5s;
+  }
+  #header.fijado {
+    background-color: rgba(23, 23, 23, 0.506);
     backdrop-filter: blur(5px); /* Valor de desenfoque */
     -webkit-backdrop-filter: blur(5px);
+  }
+  #header #nav .logo img {
+    max-width: 172px;
+  }
 
-}
-#header #nav .logo img{
-    max-width:172px;
-}
+  #header #nav ul a {
+    display: block;
+    padding: 20px 40px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 30px;
+    font-family: "Lufga";
+    border-radius: 500px;
+    transition: padding 0.5s;
+  }
 
-#header #nav ul a{
-    display:block;
-    padding:20px 40px;
-    color:#fff;
-    font-size:20px;
-    font-weight:700;
-    line-height:30px;
-    font-family: 'Lufga';
-    border-radius:500px;
-    transition: padding .5s;
-}
+  #header.fijado #nav ul a {
+    padding: 10px 40px;
+    transition: padding 0.5s;
+  }
 
-#header.fijado #nav ul a{
-    padding:10px 40px;
-    transition: padding .5s;
-}
+  /*-------- */
 
-
-/*-------- */
- 
-#main #home .content *{    
+  #main #home .content * {
     transition: all 1s ease;
-}
-#main #home .content > *{
-   /*  //transition: all 11s ease; */
-}
+  }
+  #main #home .content > * {
+    /*  //transition: all 11s ease; */
+  }
 
-#main #home .content{    
-    position:relative;
-    padding-bottom:0;
+  #main #home .content {
+    position: relative;
+    padding-bottom: 0;
     transition: all 1s ease;
-}
+  }
 
-#main #home.fijado .content{
-    padding-top:18rem;
-    padding-bottom:7rem;
-}
+  #main #home.fijado .content {
+    padding-top: 18rem;
+    padding-bottom: 7rem;
+  }
 
-#main #home.fijado .content-title{
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    order:1;
-    width:50%;
-}
-#main #home.fijado .content-title .title{
-    min-height:288px;
-}
-
-#main #home .content-image{
-    margin-left:auto;
-}
-#main #home.fijado .content-image{    
-    order:2;
-    width:50%;    
-}
-#main #home.fijado .content-image figure{
-    margin-top:-60%;
-}
-#main #home .content-stars{
+  #main #home.fijado .content-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    order: 1;
+    width: 50%;
+  }
+  #main #home.fijado .content-title .title {
+    min-height: 120px;
+  }
+  #main #home .content-image {
+    margin-left: auto;
+  }
+  #main #home.fijado .content-image {
+    order: 2;
+    width: 50%;
+  }
+  #main #home.fijado .content-image figure {
+    margin-top: -60%;
+  }
+  #main #home .content-stars {
     position: absolute;
     top: calc(50%);
-    max-width:100%;
-    left: 0; 
+    max-width: calc(100% - 40px);
+    left: 0;
     right: 0;
     margin: auto;
-}
-#main #home.fijado .content-stars{    
+  }
+  #main #home.fijado .content-stars {
     max-width: 88%;
-    top: calc(100% - 96px);    
-}
-#main #home figure{
-    position:relative;
-}
-#main #home figure::after{
+    top: calc(100% - 96px);
+  }
+  #main #home figure {
+    position: relative;
+  }
+  #main #home figure::after {
     content: "";
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     height: 0px; /* Altura del difuminado, ajusta según sea necesario */
-    opacity:0;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
-}
-#main #home.fijado figure::after{
-    opacity:1;
-    height:100px;
+    opacity: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 1)
+    );
+  }
+  #main #home.fijado figure::after {
+    opacity: 1;
+    height: 100px;
     transition: all 2s ease;
-}
-#main #home figure::before{
+  }
+  #main #home figure::before {
     content: "";
     position: absolute;
     bottom: 0;
@@ -147,84 +169,106 @@ h1, h2, h3, h4, h5, h6 {
     width: 80%;
     height: auto;
     aspect-ratio: 15 / 8;
-    background: #B1E8D0;
+    background: #b1e8d0;
     border-radius: 550px 550px 0px 0px;
     -webkit-border-radius: 550px 550px 0px 0px;
     -moz-border-radius: 550px 550px 0px 0px;
     z-index: -1;
     transition: all 2s ease;
-}
-#main #home.fijado figure::before{
-    aspect-ratio: 15 / 13;   
-}
-#main .bg-clip-text {
-    background-image: linear-gradient(to right, #00C593, #171717);
-    background-size:60%;
-    background-position:0%;
+  }
+  #main #home.fijado figure::before {
+    aspect-ratio: 15 / 13;
+  }
+  #main .bg-clip-text {
+    background-image: linear-gradient(to right, #00c593, #171717);
+    background-size: 60%;
+    background-position: 0%;
     -webkit-background-clip: text;
     background-clip: text;
-    color:transparent;
-}
+    color: transparent;
+  }
 
-#main #projects .item-project .next-icon{
-    color: #00C593;
-    transition: all .5s;
-}
+  #main #projects .item-project .next-icon {
+    color: #00c593;
+    transition: all 0.5s;
+  }
 
-#main #projects .item-project:hover .next-icon{
-    background: #00C593;
-}
+  #main #projects .item-project:hover .next-icon {
+    background: #00c593;
+  }
 
-#main #projects .item-project .next-icon i{
-    color: #00C593;
-    transition: all .5s;
-}
-
-#main #projects .item-project:hover .next-icon i{
+  #main #projects .item-project .next-icon i {
+    color: #00c593;
+    transition: all 0.5s;
+  }
+  #main #projects .item-project:hover .next-icon i {
     color: #ffffff;
-}
-
-#main #projects .item-project::before{
-    content:"";
-    position:absolute;
-    left:0;
-    top:0;
-    display:block;
-    width:100%;
-    height:100%;
-    background:rgba(0, 196, 147, 0.05);
-    background: linear-gradient(180deg, rgba(0, 196, 147,0) 40%, rgba(0, 196, 147,0.40) 90%, rgba(0, 196, 147, 0.5) 100%);
-    z-index:-1;
-}
-
-#main #projects .item-project .paragraph {
-    color: #333;
+  }
+  #main #projects .item-project::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 196, 147, 0.05);
+    background: linear-gradient(
+      180deg,
+      rgba(0, 196, 147, 0) 40%,
+      rgba(0, 196, 147, 0.4) 90%,
+      rgba(0, 196, 147, 0.5) 100%
+    );
+    z-index: -1;
+  }
+  #main #projects .item-project:hover .next-content {
+    background-color: rgba(0, 197, 148, 0.8);
+  }
+  #main #projects .item-project .paragraph {
     overflow: hidden;
-    opacity:1;
-    height: 0; /* Altura inicial cero */
-    transition: height 0.3s ease-in-out; /* Transición suave de la altura */
-}
-
-/* Estilos del texto al hacer hover */
-#main #projects .item-project:hover .paragraph {
-    overflow:visible;
-    height: auto; /* Cambia la altura a automático al hacer hover */
-}
-
-#main #projects .item-project .hover-image {
-    position:absolute;
-    top:0%;
-    left:0;
+    opacity: 1;
+    height: 0px; /* Altura inicial cero */
+    transition: height 0.5s ease-in-out; /* Transición suave de la altura */
+    -webkit-line-clamp: 3; /* Limita el texto a 2 líneas */
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+  }
+  /* Estilos del texto al hacer hover */
+  #main #projects .item-project:hover .paragraph {
+    height: 72px; /* Cambia la altura a automático al hacer hover */
+  }
+  #main #projects .item-project .hover-image {
+    position: absolute;
+    top: 0%;
+    left: 0;
     width: 100%;
     height: auto;
     display: block;
-    transform: translateY(-0%); /* Mover la imagen hacia arriba al hacer hover */
+    transform: translateY(
+      -0%
+    ); /* Mover la imagen hacia arriba al hacer hover */
     transition: transform 5.5s ease; /* Transición suave del movimiento */
-    z-index:-2;
+    z-index: -2;
+  }
+  /* Estilos para el hover */
+  #main #projects .item-project:hover .hover-image {
+    transform: translateY(
+      calc(-100% + 400px)
+    ); /* Mover la imagen hacia arriba al hacer hover */
+    transition: transform 15s ease; /* Transición suave del movimiento */
+  }
 }
 
-/* Estilos para el hover */
-#main #projects .item-project:hover .hover-image{
-transform: translateY(calc(-100% + 400px)); /* Mover la imagen hacia arriba al hacer hover */
-transition: transform 15s ease; /* Transición suave del movimiento */
+@media screen and (min-width: 1024px) {
+}
+@media screen and (min-width: 1280px) {
+    #main #home.fijado .content-title .title {
+        min-height: 144px;
+    }
+}
+@media screen and (min-width: 1440px) {
+    #main #home.fijado .content-title .title {
+        min-height: 307px;
+        max-width: 46rem;
+    }
 }

@@ -15,6 +15,10 @@ export default {
 				'8xl': '1300px',
 				'9xl': '1440px',
 			},
+			screens: {
+				'2lg': '1440px',
+				// => @media (min-width: 1440px) { ... }
+			},
 		},
 	},
 	plugins: [],
