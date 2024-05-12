@@ -1,85 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import CardProjects from '../components/CardProjects.astro';
+
 import CardAbout from '../components/CardAbout.astro';
 import ItemInfo from '../components/ItemInfo.astro';
 import ItemSkill from '../components/ItemSkill.astro';
 import TitleSection from '../components/TitleSection.astro';
 import Form from '../components/Form.astro';
+import Home from '../sections/Home.astro';
+import Projects from '../sections/Projects.astro';
 
 ---
 <Layout title="Portfolio">
-		<section id="home" class="home">
-			<div class="content max-w-9xl m-auto pt-32 sm:pt-36 md:pt-40 px-5 flex flex-col">
-				<div class="content-title mb-4 sm:mb-16 w-full z-10">
-					<div class="max-w-max mx-auto relative">
-						<img class="absolute -right-6 -top-6" src="icon-green-subtitle.svg" alt="Logo SVG">
-						<span class="block max-w-max mx-auto mb-3 py-2 px-5 border-solid border-2 rounded-full">Hola</span>
-					</div>
-					<div class="max-w-max mx-auto relative">
-						<img class="absolute w-10 sm:w-16 -left-3 sm:left-0 -bottom-8 md:-bottom-12" src="icon-green-title.svg" alt="Logo SVG">
-						<h1 class="title 2lg:text-8xl xl:text-7xl sm:text-6xl text-4xl text-center font-semibold w-full w-max 2lg:max-w-4xl sm:max-w-xl max-w-xs mx-auto">Soy <span class="text-custom-green">Luis</span>, Desarollador Web</h1>
-					</div>
-				</div>
-				<div class="content-image flex justify-center w-full">
-					<figure class="-mt-6 sm:-mt-24 md:-mt-32 transition-all"><img src="dasarrollador-luis.png" alt=""></figure>
-				</div>
-				<div class="content-stars w-full flex flex-col-reverse sm:flex-row justify-between align-middle">
-					<div>
-						<i class="fas fa-quote-left text-custom-gray text-3xl"></i>
-						<p class="max-w-80 sm:max-w-52 lg:max-w-80">
-						Transformo ideas en experiencias 
-						web emocionantes que destacan 
-						tu presencia digital.
-						</p>
-					</div>
-					<div>
-						<div class="mb-3 sm:mb-5 flex flex-row justify-end">
-							<i class="fas fa-star text-custom-green text-2xl sm:text-3xl"></i>
-							<i class="fas fa-star text-custom-green text-2xl sm:text-3xl"></i>
-							<i class="fas fa-star text-custom-green text-2xl sm:text-3xl"></i>
-							<i class="fas fa-star text-custom-green text-2xl sm:text-3xl"></i>
-							<i class="fas fa-star text-custom-green text-2xl sm:text-3xl"></i>							
-						</div>						
-						<div class="flex flex-col items-end"><span class="block text-custom-gray text-4xl sm:text-5xl font-bold mb-2">+4 Años</span> De Experincia</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<section id="projects" class="projects">
-			<div class="content max-w-9xl m-auto py-12 md:py-14 px-5">
-				<div class="content-title">					
-					<TitleSection classAdd="max-w-[426px]">Échale un vistazo a mi <span class="text-custom-green ">portafolio</span>.</TitleSection>
-				</div>
-				<div class="py-12 flex gap-5 slick-slider">
-					<div class="swiper-container">
-						<!-- Additional required wrapper -->
-						<div class="swiper-wrapper">
-					<CardProjects 
-						title="JMteam"
-						body="Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, voluptatem explicabo. Fugit maxime iusto, modi facilis voluptates reiciendis rem laboriosam deleniti iste autem ut consequatur unde quasi. Quisquam pariatur sit architecto eos deleniti?"
-						urlImage="jmteam-fullpc.webp"
-						/>						
-					<CardProjects 
-						title="Servicentro"
-						body="Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, voluptatem explicabo. Fugit maxime iusto, modi facilis voluptates reiciendis rem laboriosam deleniti iste autem ut consequatur unde quasi. Quisquam pariatur sit architecto eos deleniti?"
-						urlImage="servicentro-fullpc.webp"
-						/>					
-					<CardProjects 
-						title="LudoNex"
-						body="Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, voluptatem explicabo. Fugit maxime iusto, modi facilis voluptates reiciendis rem laboriosam deleniti iste autem ut consequatur unde quasi. Quisquam pariatur sit architecto eos deleniti?"
-						urlImage="ludonex-fullpc.webp"
-						/>
-					</div>
-					<!-- If we need pagination -->
-					<div class="swiper-pagination"></div>
-				
-				  </div>
-				</div>
-				<div><p class="text-center text-custom-gray mx-auto max-w-lg">"Con tu apoyo, esta colección de proyectos puede seguir creciendo y expandiéndose. Estoy entusiasmado por las oportunidades futuras de desarrollar más experiencias impactantes juntos."</p>
-				</div>
-			</div>
-		</section>
+		<Home />
+		<Projects />
 		<section id="about" class="about bg-custom-green-50">
 			<div class="content max-w-9xl m-auto py-12 md:py-20 px-5 flex flex-col gap-8 md:gap-0 md:flex-row">
 				<div class="md:w-6/12">
@@ -125,25 +58,27 @@ import Form from '../components/Form.astro';
 		<section id="skill" class="skill">
 			<div class="content max-w-9xl m-auto py-12 md:py-20 px-5 flex flex-col ">
 				<TitleSection classAdd="text-center text-custom-green">Mis habilidades</TitleSection>					
-				<div class="w-full flex flex-row flex-wrap gap-3 justify-between pt-12 md:pt-16">
-					<ItemSkill icon="html" alt="logo html"/>
-					<ItemSkill icon="css" alt="logo css"/>
-					<ItemSkill icon="js" alt="logo js"/>
-					<ItemSkill icon="tailwind" alt="logo tailwind"/>
-					<ItemSkill icon="boostrap" alt="logo boostrap"/>
-					<ItemSkill icon="jquery" alt="logo jquery"/>
-					<ItemSkill icon="react" alt="logo react"/>
-					<ItemSkill icon="Astro_dark" alt="logo Astro_dark"/>
-					<ItemSkill icon="wordpress" alt="logo wordpress"/>
-					<ItemSkill icon="shopify" alt="logo shopify"/>
-					<ItemSkill icon="git" alt="logo git"/>
-					<ItemSkill icon="github" alt="logo github"/>
-					<ItemSkill icon="figma" alt="logo figma"/>
-					<ItemSkill icon="photoshop" alt="logo photoshop"/>																		
+				<div class="w-full pt-12 md:pt-16 slider-css">
+					<div class="flex flex-row flex-wrap gap-3 justify-between slider-css_track">
+						<ItemSkill icon="html" alt="logo html"/>
+						<ItemSkill icon="css" alt="logo css"/>
+						<ItemSkill icon="js" alt="logo js"/>
+						<ItemSkill icon="tailwind" alt="logo tailwind"/>
+						<ItemSkill icon="boostrap" alt="logo boostrap"/>
+						<ItemSkill icon="jquery" alt="logo jquery"/>
+						<ItemSkill icon="react" alt="logo react"/>
+						<ItemSkill icon="Astro_dark" alt="logo Astro_dark"/>
+						<ItemSkill icon="wordpress" alt="logo wordpress"/>
+						<ItemSkill icon="shopify" alt="logo shopify"/>
+						<ItemSkill icon="git" alt="logo git"/>
+						<ItemSkill icon="github" alt="logo github"/>
+						<ItemSkill icon="figma" alt="logo figma"/>
+						<ItemSkill icon="photoshop" alt="logo photoshop"/>																		
+					</div>
 				</div>
 			</div>
 		</section>
-		<section id="about" class="about bg-custom-green-50">
+		<section id="contact" class="contact bg-custom-green-50">
 			<div class="content max-w-9xl m-auto py-12 md:py-20 px-5 flex flex-col md:flex-row ">
 				<div class="md:w-6/12">
 					<div class="cotent-form w-full max-w-3xl mx-auto bg-white p-6 md:p-8 rounded-[20px] shadow-md">
@@ -196,10 +131,11 @@ const swiper = new Swiper('.swiper-container', {
       // Responsive breakpoints
       768: {
 		spaceBetween: 20,
-        slidesPerView: 2, // Show 2 slides on tablets
+        slidesPerView: 2,
       },
       1024: {
 		spaceBetween: 30,
+		slidesPerView: 2,
       },
     },
 });

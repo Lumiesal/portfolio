@@ -90,9 +90,21 @@
     padding: 10px 40px;
     transition: padding 0.5s;
   }
-
+  
   /*-------- */
-
+  #main #nav-movil a{
+    color:#171717;
+  }
+  #main #nav-movil{
+  display: block;
+  position: fixed;
+  background: #fff;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 100vw;
+  }
   #main #home .content * {
     transition: all 1s ease;
   }
@@ -110,7 +122,7 @@
   #main #home figure::after {
     content: "";
     position: absolute;
-    bottom: 0;
+    bottom: -1px;
     left: 0;
     width: 100%;
     height: 100px; /* Altura del difuminado, ajusta según sea necesario */
@@ -217,8 +229,7 @@
     ); /* Mover la imagen hacia arriba al hacer hover */
     transition: transform 15s ease; /* Transición suave del movimiento */
   }
-
-  .swiper-container{
+  #main #projects .swiper-container{
 		width: 100%;
 		height: 100%;
 		margin-left: auto;
@@ -227,28 +238,59 @@
     position: relative;
     padding-bottom:50px;
 	}
-
-  .swiper-container .swiper-pagination{
+  #main #projects .swiper-container .swiper-pagination{
 		bottom:0px !important;
 	}
-
-  .swiper-container .swiper-pagination .swiper-pagination-bullet{
+  #main #projects .swiper-container .swiper-pagination .swiper-pagination-bullet{
 		width:15px;
     height:15px;
     transition: all .5s;
 	}
-  .swiper-container .swiper-pagination .swiper-pagination-bullet-active{
+  #main #projects .swiper-container .swiper-pagination .swiper-pagination-bullet-active{
 		width:40px;
     border-radius: 20px;
     background: #00c593;
 	}
-
-	.swiper-container .swiper-slide{
+	#main #projects .swiper-container .swiper-slide{
 		/* Center slide text vertically */
 		display: flex !important;
     justify-content: center;
     align-items: end;
 	}
+  #main #contact form .content-input{
+    display:grid;
+    grid-template-areas:"input";
+  }
+  #main #contact form .content-input label{
+    display:flex;
+    align-items:center;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    grid-area:input;
+    z-index: 9;
+    transition: transform .5s, padding .5s;
+  }
+  #main #contact form .content-input input{
+    grid-area:input;
+  }
+  #main #contact form .content-input input:focus + label,
+  #main #contact form .content-input input:not(:placeholder-shown) +  label{
+    transform: translate(-12%, -70%) scale(.7);
+    padding: 0.2rem;
+/*     background:linear-gradient(0deg, #F8F8F8 50%, #FFF 50%); */
+  }
+
+  #footer .nav-links a {
+    display: block;
+    padding: 10px 14px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 25px;
+  }
+
 }
 @media screen and (min-width: 640px) {
   
@@ -264,9 +306,14 @@
     width: 50%;
     margin-bottom:0;
   }
+  #main #home.fijado .content-title div:nth-child(2) img{
+    width: 3rem;
+    bottom: 0rem;
+    left: -2rem;
+  }
   #main #home.fijado .content-title .title {
     font-size: 2.5rem;
-    min-height: 120px;
+    min-height: 110px;
     max-width:20rem;
   }
   #main #home .content-image {
@@ -290,6 +337,9 @@
     max-width: 88%;
     top: calc(100% - 96px);
   }
+  #main #home.fijado .content-stars div:nth-child(1) p{
+    max-width: 17rem;
+  }
   #main #home.fijado figure::before {
     aspect-ratio: 15 / 13;
   }
@@ -297,15 +347,29 @@
 @media screen and (min-width: 768px) {
 
   #main #home.fijado .content-title .title {
-    font-size: 2.5rem;
+    font-size: 3rem;
     min-height: 120px;
-    max-width:20rem;
+    max-width:24rem;
+  }
+  #main #home.fijado .content-title div:nth-child(2) img{
+    bottom: -1rem;
+  }
+  #main #home.fijado .content-image figure {
+    margin-top: -55%;
   }
   #main #home .content-stars {
     top: calc(50%);
   }
 }
 @media screen and (min-width: 1024px) {
+  #main #home.fijado .content-title .title {
+    font-size: 4rem;
+    min-height: 160px;
+    max-width:32rem;
+  }
+  #main #home.fijado .content-image figure {
+    margin-top: -50%;
+  }
 }
 @media screen and (min-width: 1280px) {
   #header #nav ul a {
@@ -315,12 +379,24 @@
   }
 
   #main #home.fijado .content-title .title {
-      min-height: 144px;
+      font-size: 4.5rem;
+      min-height: 160px;
+      max-width: 40rem;
+  }
+  #main #home.fijado .content-image figure {
+    margin-top: -40%;
   }
 }
 @media screen and (min-width: 1440px) {
-    #main #home.fijado .content-title .title {
-        min-height: 307px;
-        max-width: 46rem;
-    }
+  #main #home.fijado .content-title .title {
+      font-size: 5.7rem;
+      min-height: 307px;
+      max-width: 46rem;
+  }
+  #main #home.fijado .content-title div:nth-child(2) img {
+    bottom: 5rem;
+  }
+  #main #home.fijado .content-image figure {
+    margin-top: -55%;
+  }
 }

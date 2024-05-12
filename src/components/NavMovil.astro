@@ -1,0 +1,26 @@
+---
+import Social from "./Social.astro";
+---
+
+<div id="content-nav" class="absolute bg-white w-full h-full top-0 -left-full z-[9999]">
+    <button id="closet-menu" class="text-white focus:outline-none">
+        <svg class="h-6 w-6" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path class="fill-white text-white" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"></path>
+          </svg>              
+    </button>
+    <nav id="nav-movil" class="relative flex flex-col justify-center items-center w-full">
+        <div class="logo">
+            <img src="logo-lumiesal.svg" alt="Icono" class="block m-auto">
+        </div>
+        <ul class="nav-links w-full lg:flex">
+            <li><a href="#home">Inicio</a></li>
+            <li><a href="#projects">Proyectos</a></li>
+            <li><a href="#about">Resumen</a></li>
+            <li><a href="#skill">Habilidades</a></li>
+            <li><a href="#contact">Contacto</a></li>
+            <li><a href="#blog">Blog</a></li>
+        </ul>
+        <Social/>
+    </nav>
+</div>

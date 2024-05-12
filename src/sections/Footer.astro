@@ -1,0 +1,23 @@
+---
+import Social from '../components/Social.astro';
+---
+
+<header id="footer" class="w-full flex flex-col m-auto ">
+    <div id="nav-footer" class="relative flex flex-col gap-8 content-center w-full pt-16 md:pt-20 pb-12 :pb-16 px-5 bg-custom-gray">
+        <div class="flex justify-center align-middle w-max m-auto">
+            <img src="logo-lumiesal.svg" alt="Icono" class="block m-auto">
+        </div>
+        <ul class="nav-links flex flex-wrap justify-center w-full max-w-lg md:max-w-max mx-auto gap-3">
+            <li><a href="#home">Inicio</a></li>
+            <li><a href="#projects">Proyectos</a></li>
+            <li><a href="#about">Resumen</a></li>
+            <li><a href="#skill">Habilidades</a></li>
+            <li><a href="#contact">Contacto</a></li>
+            <li><a href="#blog">Blog</a></li>
+        </ul>
+        <Social/>
+    </div>
+    <div id="copy" class="bg-custom-green py-3 px-5">
+        <p class="text-center text-sm text-white">© 2024 <a class="font-bold" href="https://ludonex.com/" target="_blank">Ludonex</a> All Rights Reserved , Inc.</p>
+    </div>
+</header>
