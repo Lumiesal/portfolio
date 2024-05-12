@@ -8,7 +8,7 @@ interface Props {
 const { time, position, company } = Astro.props;
 ---
 
-<div class="link-card lg:w-11/12 bg-white p-8 mt-7 rounded-[20px]">
+<div class="link-card md:w-11/12 bg-white p-8 mt-7 rounded-[20px]">
 	<div>
 		<span class="text-xl ">
 			<strong class="text-custom-green">
@@ -20,7 +20,7 @@ const { time, position, company } = Astro.props;
 				{position}
 			</strong>
 		</h3>
-		<p class="font-normal">
+		<p class="font-light">
 			{company}
 		</p>
 	</div>

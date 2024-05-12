@@ -7,12 +7,12 @@ interface Props {
 
 const { title, body, urlImage } = Astro.props;
 ---
-<div class="item-project relative flex rounded-[20px] overflow-hidden z-10 w-full min-h-[400px] h-max p-4">
-	<div class="next-icon absolute right-3 top-3 flex justify-center items-center w-16 h-16 border-2 border-custom-green rounded-full text-custom-green hover:text-white hover:bg-custom-green">
+<div class="swiper-slide item-project relative flex rounded-[20px] overflow-hidden z-10 w-full min-h-[330px] md:min-h-[300px] lg:min-h-[400px] h-max p-2 md:p-4">
+	<div class="next-icon absolute right-3 top-3 flex justify-center items-center size-10 md:size-14 lg:size-16 border-2 border-custom-green rounded-full text-custom-green hover:text-white hover:bg-custom-green">
 		<i class="fas fa-arrow-right "></i> <!-- Icono de flecha "next" -->
 	</div> 
-	<div class="next-content mt-auto p-5 rounded-[20px]">
-		<h3 ><strong class="text-white text-6xl font-urbanist">{title}</strong></h3> <!-- Título h3 -->
+	<div class="next-content mt-auto p-3 rounded-[20px]">
+		<h3 ><strong class="text-white text-4xl md:text-5xl lg:text-6xl font-urbanist">{title}</strong></h3> <!-- Título h3 -->
 		<p class="paragraph text-white mt-6 font-normal">{body}</p> <!-- Párrafo -->
 		<img class="hover-image " src=`${urlImage}` alt="Imagen" /> <!-- Imagen -->
 	</div>

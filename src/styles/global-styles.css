@@ -24,6 +24,13 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: "Lufga";
+  src: url("/fonts/LufgaLight.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
 @import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
 
 @media screen and (min-width: 0px) {
@@ -69,14 +76,14 @@
 
   #header #nav ul a {
     display: block;
-    padding: 20px 40px;
+    padding: 20px 30px;
     color: #fff;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 700;
     line-height: 30px;
     font-family: "Lufga";
     border-radius: 500px;
-    transition: padding 0.5s;
+    transition: padding 0.5s, font-size 0.5s;
   }
 
   #header.fijado #nav ul a {
@@ -92,49 +99,10 @@
   #main #home .content > * {
     /*  //transition: all 11s ease; */
   }
-
   #main #home .content {
     position: relative;
     padding-bottom: 0;
     transition: all 1s ease;
-  }
-
-  #main #home.fijado .content {
-    padding-top: 18rem;
-    padding-bottom: 7rem;
-  }
-
-  #main #home.fijado .content-title {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    order: 1;
-    width: 50%;
-  }
-  #main #home.fijado .content-title .title {
-    min-height: 120px;
-  }
-  #main #home .content-image {
-    margin-left: auto;
-  }
-  #main #home.fijado .content-image {
-    order: 2;
-    width: 50%;
-  }
-  #main #home.fijado .content-image figure {
-    margin-top: -60%;
-  }
-  #main #home .content-stars {
-    position: absolute;
-    top: calc(50%);
-    max-width: calc(100% - 40px);
-    left: 0;
-    right: 0;
-    margin: auto;
-  }
-  #main #home.fijado .content-stars {
-    max-width: 88%;
-    top: calc(100% - 96px);
   }
   #main #home figure {
     position: relative;
@@ -145,18 +113,13 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 0px; /* Altura del difuminado, ajusta según sea necesario */
-    opacity: 0;
+    height: 100px; /* Altura del difuminado, ajusta según sea necesario */
+    opacity: 1;
     background: linear-gradient(
       to bottom,
       rgba(255, 255, 255, 0),
       rgba(255, 255, 255, 1)
     );
-  }
-  #main #home.fijado figure::after {
-    opacity: 1;
-    height: 100px;
-    transition: all 2s ease;
   }
   #main #home figure::before {
     content: "";
@@ -176,12 +139,9 @@
     z-index: -1;
     transition: all 2s ease;
   }
-  #main #home.fijado figure::before {
-    aspect-ratio: 15 / 13;
-  }
   #main .bg-clip-text {
-    background-image: linear-gradient(to right, #00c593, #171717);
-    background-size: 60%;
+    background-image: linear-gradient(90deg, #00c593, #171717);
+    background-size: 150%;
     background-position: 0%;
     -webkit-background-clip: text;
     background-clip: text;
@@ -257,14 +217,106 @@
     ); /* Mover la imagen hacia arriba al hacer hover */
     transition: transform 15s ease; /* Transición suave del movimiento */
   }
-}
 
+  .swiper-container{
+		width: 100%;
+		height: 100%;
+		margin-left: auto;
+		margin-right: auto;
+		overflow: hidden;
+    position: relative;
+    padding-bottom:50px;
+	}
+
+  .swiper-container .swiper-pagination{
+		bottom:0px !important;
+	}
+
+  .swiper-container .swiper-pagination .swiper-pagination-bullet{
+		width:15px;
+    height:15px;
+    transition: all .5s;
+	}
+  .swiper-container .swiper-pagination .swiper-pagination-bullet-active{
+		width:40px;
+    border-radius: 20px;
+    background: #00c593;
+	}
+
+	.swiper-container .swiper-slide{
+		/* Center slide text vertically */
+		display: flex !important;
+    justify-content: center;
+    align-items: end;
+	}
+}
+@media screen and (min-width: 640px) {
+  
+  #main #home.fijado .content {
+    padding-top: 18rem;
+    padding-bottom: 7rem;
+  }
+
+  #main #home.fijado .content-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    margin-bottom:0;
+  }
+  #main #home.fijado .content-title .title {
+    font-size: 2.5rem;
+    min-height: 120px;
+    max-width:20rem;
+  }
+  #main #home .content-image {
+    margin-left: auto;
+  }
+  #main #home.fijado .content-image {
+    width: 50%;
+  }
+  #main #home.fijado .content-image figure {
+    margin-top: -60%;
+  }
+  #main #home .content-stars {
+    position: absolute;
+    top: calc(54%);
+    max-width: calc(100% - 40px);
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+  #main #home.fijado .content-stars {
+    max-width: 88%;
+    top: calc(100% - 96px);
+  }
+  #main #home.fijado figure::before {
+    aspect-ratio: 15 / 13;
+  }
+}
+@media screen and (min-width: 768px) {
+
+  #main #home.fijado .content-title .title {
+    font-size: 2.5rem;
+    min-height: 120px;
+    max-width:20rem;
+  }
+  #main #home .content-stars {
+    top: calc(50%);
+  }
+}
 @media screen and (min-width: 1024px) {
 }
 @media screen and (min-width: 1280px) {
-    #main #home.fijado .content-title .title {
-        min-height: 144px;
-    }
+  #header #nav ul a {
+    padding: 20px 40px;
+    font-size: 20px;
+    border-radius: 500px;
+  }
+
+  #main #home.fijado .content-title .title {
+      min-height: 144px;
+  }
 }
 @media screen and (min-width: 1440px) {
     #main #home.fijado .content-title .title {

@@ -9,6 +9,7 @@ export default {
 			colors: {
 				'custom-gray': '#171717',
 				'custom-green': '#4DC493',
+				'custom-gray-50': '#F8F8F8',
 				'custom-green-50': '#00c5931a',
 			},
 			spacing: {
