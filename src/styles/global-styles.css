@@ -40,6 +40,7 @@
   html {
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
   }
 
   html * {
@@ -229,7 +230,7 @@
     ); /* Mover la imagen hacia arriba al hacer hover */
     transition: transform 15s ease; /* Transición suave del movimiento */
   }
-  #main #projects .swiper-container{
+  #main .swiper-container{
 		width: 100%;
 		height: 100%;
 		margin-left: auto;
@@ -238,20 +239,20 @@
     position: relative;
     padding-bottom:50px;
 	}
-  #main #projects .swiper-container .swiper-pagination{
+  #main .swiper-container .swiper-pagination{
 		bottom:0px !important;
 	}
-  #main #projects .swiper-container .swiper-pagination .swiper-pagination-bullet{
+  #main .swiper-container .swiper-pagination .swiper-pagination-bullet{
 		width:15px;
     height:15px;
     transition: all .5s;
 	}
-  #main #projects .swiper-container .swiper-pagination .swiper-pagination-bullet-active{
+  #main .swiper-container .swiper-pagination .swiper-pagination-bullet-active{
 		width:40px;
     border-radius: 20px;
     background: #00c593;
 	}
-	#main #projects .swiper-container .swiper-slide{
+	#main .swiper-container .swiper-slide{
 		/* Center slide text vertically */
 		display: flex !important;
     justify-content: center;
@@ -389,7 +390,7 @@
 }
 @media screen and (min-width: 1440px) {
   #main #home.fijado .content-title .title {
-      font-size: 5.7rem;
+      font-size: 5.5rem;
       min-height: 307px;
       max-width: 46rem;
   }

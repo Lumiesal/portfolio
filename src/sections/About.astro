@@ -1,0 +1,47 @@
+---
+import TitleSection from '../components/TitleSection.astro';
+import CardAbout from '../components/CardAbout.astro';
+---
+
+<section id="about" class="about bg-custom-green-50">
+    <div class="content max-w-8xl m-auto py-12 md:py-20 px-5 flex flex-col gap-8 md:gap-0 md:flex-row">
+        <div class="md:w-6/12">
+            <div class="content-title flex items-center">
+                <span><i class="fa-solid fa-laptop-code ml-1 mr-4 text-custom-green text-4xl"></i></span>
+                <TitleSection classAdd="bg-clip-text">Mi experiencia.</TitleSection>
+            </div>
+            <CardAbout 
+                time="2021 - Present"
+                position="Desarrollador Frontend"
+                company="West Cretivo"
+            />
+            <CardAbout 
+                time="2022 - Present"
+                position="Desarrollador web"
+                company="JM-Team"
+            />
+            <img src="" alt="">
+        </div>
+        <div class="md:w-6/12">
+            <div class="content-title flex items-center">
+                <span><i class="fa-solid fa-laptop-file ml-1 mr-4 text-custom-green text-4xl"></i></span>
+                <TitleSection classAdd="bg-clip-text">Mi educación</TitleSection>
+            </div>
+            <CardAbout 
+                time="2024 - Present"
+                position="React y TypeScript"
+                company="udemy"
+            />
+            <CardAbout 
+                time="2023 - Present"
+                position="Ingeniería de Telecomunicaciones"
+                company="Universidad de antioquia"
+            />					
+            <CardAbout 
+                time="2020 - 2020"
+                position="Html, Css y JS"
+                company="udemy"
+            />					
+        </div>
+    </div>
+</section>

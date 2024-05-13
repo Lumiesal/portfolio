@@ -1,62 +1,23 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-import CardAbout from '../components/CardAbout.astro';
+
 import ItemInfo from '../components/ItemInfo.astro';
 import ItemSkill from '../components/ItemSkill.astro';
 import TitleSection from '../components/TitleSection.astro';
 import Form from '../components/Form.astro';
 import Home from '../sections/Home.astro';
 import Projects from '../sections/Projects.astro';
+import Blogs from '../sections/Blogs.astro';
+import About from '../sections/About.astro';
 
 ---
 <Layout title="Portfolio">
 		<Home />
 		<Projects />
-		<section id="about" class="about bg-custom-green-50">
-			<div class="content max-w-9xl m-auto py-12 md:py-20 px-5 flex flex-col gap-8 md:gap-0 md:flex-row">
-				<div class="md:w-6/12">
-					<div class="content-title flex items-center">
-						<span><i class="fa-solid fa-laptop-code ml-1 mr-4 text-custom-green text-4xl"></i></span>
-						<TitleSection classAdd="bg-clip-text">Mi experiencia.</TitleSection>
-					</div>
-					<CardAbout 
-						time="2021 - Present"
-						position="Desarrollador Frontend"
-						company="West Cretivo"
-					/>
-					<CardAbout 
-						time="2022 - Present"
-						position="Desarrollador web"
-						company="JM-Team"
-					/>
-					<img src="" alt="">
-				</div>
-				<div class="md:w-6/12">
-					<div class="content-title flex items-center">
-						<span><i class="fa-solid fa-laptop-file ml-1 mr-4 text-custom-green text-4xl"></i></span>
-						<TitleSection classAdd="bg-clip-text">Mi educación</TitleSection>
-					</div>
-					<CardAbout 
-						time="2024 - Present"
-						position="React y TypeScript"
-						company="udemy"
-					/>
-					<CardAbout 
-						time="2023 - Present"
-						position="Ingeniería de Telecomunicaciones"
-						company="Universidad de antioquia"
-					/>					
-					<CardAbout 
-						time="2020 - 2020"
-						position="Html, Css y JS"
-						company="udemy"
-					/>					
-				</div>
-			</div>
-		</section>
+		<About />
 		<section id="skill" class="skill">
-			<div class="content max-w-9xl m-auto py-12 md:py-20 px-5 flex flex-col ">
+			<div class="content max-w-8xl m-auto py-12 md:py-20 px-5 flex flex-col ">
 				<TitleSection classAdd="text-center text-custom-green">Mis habilidades</TitleSection>					
 				<div class="w-full pt-12 md:pt-16 slider-css">
 					<div class="flex flex-row flex-wrap gap-3 justify-between slider-css_track">
@@ -79,7 +40,7 @@ import Projects from '../sections/Projects.astro';
 			</div>
 		</section>
 		<section id="contact" class="contact bg-custom-green-50">
-			<div class="content max-w-9xl m-auto py-12 md:py-20 px-5 flex flex-col md:flex-row ">
+			<div class="content max-w-8xl m-auto py-12 md:py-20 px-5 flex flex-col md:flex-row ">
 				<div class="md:w-6/12">
 					<div class="cotent-form w-full max-w-3xl mx-auto bg-white p-6 md:p-8 rounded-[20px] shadow-md">
 						<div class="content-title"><TitleSection>¡Trabajemos <span class="text-custom-green">juntos</span>!</TitleSection></div>
@@ -108,36 +69,66 @@ import Projects from '../sections/Projects.astro';
 				</div>
 			</div>
 		</section>
+		<Blogs />
 </Layout>
 
 <script>
-// import Swiper bundle with all modules installed
-import Swiper from 'swiper/bundle';
 
-// import styles bundle
-import 'swiper/css/bundle';
+    // import Swiper bundle with all modules installed
+    import Swiper from 'swiper/bundle';
 
-const swiper = new Swiper('.swiper-container', {
-	slidesPerView: 1,
-	loop: true,
-	autoplay: {
-	delay: 6000,
-	},
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    },
-	breakpoints: {
-      // Responsive breakpoints
-      768: {
-		spaceBetween: 20,
-        slidesPerView: 2,
-      },
-      1024: {
-		spaceBetween: 30,
-		slidesPerView: 2,
-      },
-    },
-});
+    // import styles bundle
+    import 'swiper/css/bundle';
+
+
+	const swiper = new Swiper('.swiper-projects', {
+        slidesPerView: 1,
+        loop: true,
+        autoplay: {
+        delay: 6000,
+        },
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        breakpoints: {
+          // Responsive breakpoints
+          768: {
+            spaceBetween: 20,
+            slidesPerView: 2,
+          },
+          1024: {
+            spaceBetween: 30,
+            slidesPerView: 2,
+          },
+        },
+    });
+
+
+	const swiperblog = new Swiper('.swiper-blogs', {
+		slidesPerView: 1,
+        loop: true,
+        autoplay: {
+        delay: 6000,
+        },
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        breakpoints: {
+          // Responsive breakpoints
+          768: {
+            spaceBetween: 20,
+            slidesPerView: 3,
+          },
+          1024: {
+            spaceBetween: 30,
+            slidesPerView: 3,
+          },
+        },
+	});
+
+
+
 
 </script>

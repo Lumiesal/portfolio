@@ -13,8 +13,8 @@ export default {
 				'custom-green-50': '#00c5931a',
 			},
 			spacing: {
-				'8xl': '1300px',
-				'9xl': '1440px',
+				'8xl': '1240px',
+				'9xl': '1300px',
 			},
 			screens: {
 				'2lg': '1440px',

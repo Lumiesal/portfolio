@@ -1,0 +1,100 @@
+---
+const apiUrl = import.meta.env.API_URL;
+let posts;
+
+try {
+    const response = await fetch(`${apiUrl}per_page=10`);
+    const ultimosPosts = await response.json();
+    posts = ultimosPosts;
+} catch (error) {
+    console.error('Error al obtener los posts:', error);
+}
+
+---
+
+<section id="blogs" class="blogs">
+    <div class="content max-w-8xl m-auto py-12 md:py-14 px-5">        
+        <div class="py-12 flex gap-5 slick-slider">
+            <div class="swiper-container swiper-blogs">
+                <div id="content-blogs" class="swiper-wrapper">
+                    {
+                        posts?.map((post) =>(
+                            <div class="swiper-slide post-item rounded-lg overflow-hidden shadow-md flex-col">
+                                <div class="post-image w-full">
+                                    <img src={post.uagb_featured_image_src.full[0]} alt={post.title.rendered} title={post.title.rendered}>
+                                </div>
+                                <div class="post-content px-6 py-4">
+                                    <h3><a href={post.link}>{post.title.rendered}</a></h3>
+                                    <div set:html={ post.excerpt.rendered}/>
+                                    <a href={post.link} class="w-max bg-custom-green text-white font-bold py-2 px-4 rounded-lg focus:outline-none">Ir al Post</a></h3>
+                                </div>                            
+                            </div>
+                        ))
+                    }
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>        
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<script>
+
+  
+  
+
+    function mostrarPosts(posts) {
+        const listaPosts = document?.getElementById('content-blogs');
+
+        posts.forEach(post => {
+            const listItem = document.createElement('div');
+            listItem.classList.add('');
+            
+            // Crear elemento de imagen destacada si existe
+            if (post.uagb_featured_image_src && post.uagb_featured_image_src.full) {
+                const imageContainer = document.createElement('div');
+                imageContainer.classList.add('');
+                const featuredImage = document.createElement('img');
+                featuredImage.classList.add('image', 'w-full');
+                featuredImage.src = ''; // Obtener la URL de la imagen "full"
+                featuredImage.alt = ''; // Usar el título del post como texto alternativo
+                imageContainer.appendChild(featuredImage);
+                listItem.appendChild(imageContainer);
+                // Agregar imagen al elemento <li>
+            }
+
+            const contentContainer = document.createElement('div');
+            contentContainer.classList.add('');
+            
+            // Crear elemento de título y enlace
+            const title = document.createElement('h3');
+            title.classList.add('text-xl', 'font-bold', 'mb-2');
+            const link = document.createElement('a');
+            link.textContent = post.title.rendered;
+            link.href = post.link;
+            title.appendChild(link);
+            contentContainer.appendChild(title);
+
+            // Crear elemento de excerpt (extracto)
+            const excerpt = document.createElement('div');
+            excerpt.innerHTML = post.excerpt.rendered;
+            contentContainer.appendChild(excerpt);
+            
+            // Crear Boton ir al post
+            const buttonLink = document.createElement('a');
+            buttonLink.classList.add('');              
+            buttonLink.textContent  = "Ir al Post";
+            buttonLink.href = post.link;
+            contentContainer.appendChild(buttonLink);
+            listItem.appendChild(contentContainer);
+
+            listaPosts?.appendChild(listItem);
+        });
+    }   
+    //obtenerUltimosPosts();
+</script>
