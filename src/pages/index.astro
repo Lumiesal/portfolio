@@ -1,134 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro';
-
-
-import ItemInfo from '../components/ItemInfo.astro';
-import ItemSkill from '../components/ItemSkill.astro';
-import TitleSection from '../components/TitleSection.astro';
-import Form from '../components/Form.astro';
+import 'swiper/css/bundle';
 import Home from '../sections/Home.astro';
 import Projects from '../sections/Projects.astro';
 import Blogs from '../sections/Blogs.astro';
 import About from '../sections/About.astro';
+import Skill from '../sections/Skill.astro';
 
 ---
 <Layout title="Portfolio">
 		<Home />
 		<Projects />
 		<About />
-		<section id="skill" class="skill">
-			<div class="content max-w-8xl m-auto py-12 md:py-20 px-5 flex flex-col ">
-				<TitleSection classAdd="text-center text-custom-green">Mis habilidades</TitleSection>					
-				<div class="w-full pt-12 md:pt-16 slider-css">
-					<div class="flex flex-row flex-wrap gap-3 justify-between slider-css_track">
-						<ItemSkill icon="html" alt="logo html"/>
-						<ItemSkill icon="css" alt="logo css"/>
-						<ItemSkill icon="js" alt="logo js"/>
-						<ItemSkill icon="tailwind" alt="logo tailwind"/>
-						<ItemSkill icon="boostrap" alt="logo boostrap"/>
-						<ItemSkill icon="jquery" alt="logo jquery"/>
-						<ItemSkill icon="react" alt="logo react"/>
-						<ItemSkill icon="Astro_dark" alt="logo Astro_dark"/>
-						<ItemSkill icon="wordpress" alt="logo wordpress"/>
-						<ItemSkill icon="shopify" alt="logo shopify"/>
-						<ItemSkill icon="git" alt="logo git"/>
-						<ItemSkill icon="github" alt="logo github"/>
-						<ItemSkill icon="figma" alt="logo figma"/>
-						<ItemSkill icon="photoshop" alt="logo photoshop"/>																		
-					</div>
-				</div>
-			</div>
-		</section>
-		<section id="contact" class="contact bg-custom-green-50">
-			<div class="content max-w-8xl m-auto py-12 md:py-20 px-5 flex flex-col md:flex-row ">
-				<div class="md:w-6/12">
-					<div class="cotent-form w-full max-w-3xl mx-auto bg-white p-6 md:p-8 rounded-[20px] shadow-md">
-						<div class="content-title"><TitleSection>¡Trabajemos <span class="text-custom-green">juntos</span>!</TitleSection></div>
-						<Form />
-					  </div>				  					
-				</div>
-				<div class="md:w-6/12 flex flex-col justify-center md:px-5 lg:px-10">
-					<ItemInfo 
-						icon='fa-solid fa-phone-volume'
-						title='Teléfono'
-						info='+57 323 808 8453'
-						url='https://wa.me/+573238088453'
-					/>										
-					<ItemInfo 
-						icon='fa-solid fa-envelope'
-						title='Email'
-						info='lumiesal@gmail.com'
-						url='https://www.linkedin.com/in/lumiesal/'
-					/>										
-					<ItemInfo
-						icon='fa-brands fa-linkedin'
-						title='Linkedin'
-						info='in/lumiesal'
-						url='https://www.linkedin.com/in/lumiesal/'
-					/>										
-				</div>
-			</div>
-		</section>
+		<Skill />		
 		<Blogs />
 </Layout>
 
-<script>
-
-    // import Swiper bundle with all modules installed
-    import Swiper from 'swiper/bundle';
-
-    // import styles bundle
-    import 'swiper/css/bundle';
-
-
-	const swiper = new Swiper('.swiper-projects', {
-        slidesPerView: 1,
-        loop: true,
-        autoplay: {
-        delay: 6000,
-        },
-          pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-        breakpoints: {
-          // Responsive breakpoints
-          768: {
-            spaceBetween: 20,
-            slidesPerView: 2,
-          },
-          1024: {
-            spaceBetween: 30,
-            slidesPerView: 2,
-          },
-        },
-    });
-
-
-	const swiperblog = new Swiper('.swiper-blogs', {
-		slidesPerView: 1,
-        loop: true,
-        autoplay: {
-        delay: 6000,
-        },
-          pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-        breakpoints: {
-          // Responsive breakpoints
-          768: {
-            spaceBetween: 20,
-            slidesPerView: 3,
-          },
-          1024: {
-            spaceBetween: 30,
-            slidesPerView: 3,
-          },
-        },
-	});
-
-
-
-
-</script>

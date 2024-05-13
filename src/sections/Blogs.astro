@@ -17,7 +17,7 @@ try {
 <section id="blogs" class="blogs">
     <div class="content max-w-8xl m-auto py-12 md:py-14 px-5">        
         <div class="py-12 flex flex-col gap-5 slick-slider">
-            <div class="content-title pb-20">					
+            <div class="content-title pb-16">					
                 <TitleSection classAdd="max-w-[426px]">Blogs <span class="text-custom-green ">Recientes</span>.</TitleSection>
             </div>
             <div class="swiper-container swiper-blogs">                
@@ -26,7 +26,7 @@ try {
                         posts?.map( post => (                            
                             <div class="swiper-slide item-post rounded-lg overflow-hidden shadow-md flex-col">
                                 <div class="post-image w-full border-b overflow-hidden">
-                                    <img class="object-cover hover:scale-125 transition-all" src={post.uagb_featured_image_src.full[0]} alt={post.title.rendered} title={post.title.rendered}>
+                                    <a href={post.link}><img class="object-cover hover:scale-125 transition-all" src={post.uagb_featured_image_src.full[0]} alt={post.title.rendered} title={post.title.rendered}></a>
                                 </div>
                                 <div class="post-content px-6 py-4 flex flex-col gap-2">
                                     <h3 class="title-post text-lg font-bold"><a href={post.link}>{post.title.rendered}</a></h3>
@@ -46,61 +46,29 @@ try {
 </section>
 
 
-
-
-
 <script>
-
-  
-  
-
-    function mostrarPosts(posts) {
-        const listaPosts = document?.getElementById('content-blogs');
-
-        posts.forEach(post => {
-            const listItem = document.createElement('div');
-            listItem.classList.add('');
-            
-            // Crear elemento de imagen destacada si existe
-            if (post.uagb_featured_image_src && post.uagb_featured_image_src.full) {
-                const imageContainer = document.createElement('div');
-                imageContainer.classList.add('');
-                const featuredImage = document.createElement('img');
-                featuredImage.classList.add('image', 'w-full');
-                featuredImage.src = ''; // Obtener la URL de la imagen "full"
-                featuredImage.alt = ''; // Usar el título del post como texto alternativo
-                imageContainer.appendChild(featuredImage);
-                listItem.appendChild(imageContainer);
-                // Agregar imagen al elemento <li>
-            }
-
-            const contentContainer = document.createElement('div');
-            contentContainer.classList.add('');
-            
-            // Crear elemento de título y enlace
-            const title = document.createElement('h3');
-            title.classList.add('text-xl', 'font-bold', 'mb-2');
-            const link = document.createElement('a');
-            link.textContent = post.title.rendered;
-            link.href = post.link;
-            title.appendChild(link);
-            contentContainer.appendChild(title);
-
-            // Crear elemento de excerpt (extracto)
-            const excerpt = document.createElement('div');
-            excerpt.innerHTML = post.excerpt.rendered;
-            contentContainer.appendChild(excerpt);
-            
-            // Crear Boton ir al post
-            const buttonLink = document.createElement('a');
-            buttonLink.classList.add('');              
-            buttonLink.textContent  = "Ir al Post";
-            buttonLink.href = post.link;
-            contentContainer.appendChild(buttonLink);
-            listItem.appendChild(contentContainer);
-
-            listaPosts?.appendChild(listItem);
-        });
-    }   
-    //obtenerUltimosPosts();
+    import Swiper from 'swiper/bundle';
+    const swiperblog = new Swiper('.swiper-blogs', {
+        slidesPerView: 1,
+        loop: true,
+        autoplay: {
+        delay: 6000,
+        },
+            pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        breakpoints: {
+            // Responsive breakpoints
+            768: {
+            spaceBetween: 20,
+            slidesPerView: 3,
+            },
+            1024: {
+            spaceBetween: 30,
+            slidesPerView: 3,
+            },
+        },
+});
 </script>
+    
