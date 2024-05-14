@@ -7,4 +7,4 @@ interface Props {
 const { alt, icon } = Astro.props;
 ---
 
-<div class="w-[20%] md:w-[12%] p-1 md:p-2 lg:p-6 rounded-md text-white text-5xl text-center"><img class="block w-full" src=`/icons/icon-${icon}.svg` alt=`${alt}`></div>
+<div class="w-[20%] md:w-[12%] p-1 md:p-2 lg:p-6 rounded-md text-white text-5xl text-center"><img class="block w-full" src=`/icons/icon-${icon}.svg` title=`${alt}` alt=`${alt}` loading="lazy"></div>

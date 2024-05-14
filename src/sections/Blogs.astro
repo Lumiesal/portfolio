@@ -14,7 +14,7 @@ try {
 
 ---
 
-<section id="blogs" class="blogs">
+<section id="blog" class="blog">
     <div class="content max-w-8xl m-auto py-12 md:py-14 px-5">        
         <div class="py-12 flex flex-col gap-5 slick-slider">
             <div class="content-title pb-16">					
@@ -23,16 +23,16 @@ try {
             <div class="swiper-container swiper-blogs">                
                 <div id="content-blogs" class="swiper-wrapper">
                     {   
-                        posts?.map( post => (                            
+                        posts?.map((post) => (                            
                             <div class="swiper-slide item-post rounded-lg overflow-hidden shadow-md flex-col">
                                 <div class="post-image w-full border-b overflow-hidden">
-                                    <a href={post.link}><img class="object-cover hover:scale-125 transition-all" src={post.uagb_featured_image_src.full[0]} alt={post.title.rendered} title={post.title.rendered}></a>
+                                    <a href={post.link}><img class="object-cover hover:scale-125 transition-all" src={post.uagb_featured_image_src.full[0]} alt={post.title.rendered} title={post.title.rendered} loading="lazy"></a>
                                 </div>
                                 <div class="post-content px-6 py-4 flex flex-col gap-2">
                                     <h3 class="title-post text-lg font-bold"><a href={post.link}>{post.title.rendered}</a></h3>
-                                    <div class="excerpt-post font-normal" set:html={ post.excerpt.rendered}/>
+                                    <div set:html={ post.excerpt.rendered}></div>
                                     <span class="btn-post max-w-max py-1 px-6 rounded-full border font-light">{post._embedded['wp:term'][0][0].slug}</span>
-                                    <a href={post.link} class="w-max bg-custom-green text-white font-bold py-2 px-4 rounded-lg focus:outline-none hover:scale-110 transition-all">Ir al Post</a></h3>
+                                    <a href={post.link} class="w-max bg-custom-green text-white font-bold py-2 px-4 rounded-lg focus:outline-none hover:scale-110 transition-all">Ir al Post</a>
                                 </div>                            
                             </div>
                         ))
@@ -62,10 +62,10 @@ try {
             // Responsive breakpoints
             768: {
             spaceBetween: 20,
-            slidesPerView: 3,
+            slidesPerView: 2,
             },
             1024: {
-            spaceBetween: 30,
+            spaceBetween: 20,
             slidesPerView: 3,
             },
         },

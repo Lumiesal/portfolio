@@ -31,7 +31,6 @@
   font-style: normal;
   font-display: swap;
 }
-@import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
 
 @media screen and (min-width: 0px) {
   :root {
@@ -60,7 +59,7 @@
   h4,
   h5,
   h6 {
-    font-family: "Urbanist", sans-serif;
+    font-family: 'Urbanist Variable', sans-serif;
   }
 
   #header {
@@ -231,28 +230,28 @@
     transition: transform 15s ease; /* Transición suave del movimiento */
   }
 
-  #main #blogs .swiper-container{
+  #main #blog .swiper-container{
     padding-top:10px;
     padding-inline:10px;
   }
 
-  #main #blogs .swiper-container .swiper-slide.item-post{
+  #main #blog .swiper-container .swiper-slide.item-post{
     box-shadow: 0px 2px 5px -1px #00000070;
     transition: box-shadow .5s;
   }
 
-  #main #blogs .swiper-container .swiper-slide.item-post:hover{
+  #main #blog .swiper-container .swiper-slide.item-post:hover{
     box-shadow: 0px 4px 12px 0px #00000070;
   }
 
-  #main #blogs .swiper-container .swiper-slide .post-content .title-post{
+  #main #blog .swiper-container .swiper-slide .post-content .title-post{
     overflow: hidden;
     -webkit-line-clamp: 1; /* Limita el texto a 2 líneas */
     -webkit-box-orient: vertical;
     display: -webkit-box;
   }
 
-  #main #blogs .swiper-container .swiper-slide .post-content div p{
+  #main #blog .swiper-container .swiper-slide .post-content div p{
     font-size:14px;
     font-weight:300;
   }
